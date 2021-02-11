@@ -9,7 +9,7 @@ jobs:
     runs-on: unbutu-16.04 # Máquina que será executada o código
     steps:
       - name: Checkout
-        uses: actions/checkou@v1 # Verifica o repositório e baixa o código
+        uses: actions/checkout@v1 # Verifica o repositório e baixa o código
       - name: Instalar as dep do server # Instalar as dep. da API
         uses: bahmutov/npm-install@v1
         with:
