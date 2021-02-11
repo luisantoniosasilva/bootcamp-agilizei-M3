@@ -2,26 +2,26 @@ name: Run tests
 
 on: 
   push:
-    branches: [main]
-    
+    branches: [main] #Branch que irá disparar o CI
+   
 jobs:
   cypress-run:
-    runs-on: unbutu-16.04
+    runs-on: unbutu-16.04 # Máquina que será executada o código
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Instalar as dep do server
+        uses: actions/checkout@v1 # Verifica o repositório e baixa o código
+      - name: Instalar as dep do server # Instalar as dep. da API
         uses: bahmutov/npm-install@v1
         with:
           working-directory: server
-      - name: Instalar as dep do web
+      - name: Instalar as dep do web # Instalar as dep do web
         uses: bahmutov/npm-install@v1
         with:
           working-directory: web
       - name: Component & API & UI Tests
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v2 # Já executa o teste não tendo que passar pra subir o cypress
         with:
           working-directory: web
           install: false
-          start: npm run start:ci
+          start: npm run start:ci # Subir a aplicação
           wait-on: 'http://localhost:3000'
