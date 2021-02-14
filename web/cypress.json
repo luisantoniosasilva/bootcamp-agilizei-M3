@@ -2,5 +2,7 @@
     "baseUrl": "http://localhost:3000",
     "apiUrl": "http://localhost:3333",
     "experimentalComponentTesting": true,
-    "componentFolder": "cypress/component"
+    "componentFolder": "cypress/component",
+    "viewportWidth": 1200,
+    "viewportHeight": 860
 }
